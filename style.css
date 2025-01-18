@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box; /*behavior of width and height*/
+    margin: 0;
+  }
+
+[class*="grid"]{ /*create the template with grid display*/
+    display: grid;
+    grid-template-columns: 1fr 4fr; 
+    grid-template-rows:
+        min-content min-content auto min-content;
+    grid-template-areas: 
+        "header header"
+        "nav nav"
+        "aside main"
+        "footer footer";
+    height: 2500px;
+}
+
+.grid {width: 100%;} /*for desktop*/
+
+
+@media (max-width: 768px) {
+    aside  button{
+        font-size: 12px; /* Μικρότερο μέγεθος γραμματοσειράς */
+        width: 80%;
+        word-wrap: break-word; /* Allows breaking long words */
+        overflow-wrap: break-word;
+        max-width: 80px;
+    }
+    
+    aside{
+        width: 120px;
+    }
+}
+
+
+
+header,
+nav,
+aside,
+main,
+
+footer { /*footer area*/
+    grid-area: footer;
+    border: 1px solid black; /*set all the areas border and backround color*/
+    background-color: rgb(93, 129, 145);
+}
+
+header { /*header area*/
+    grid-area: header;
+    text-align: center;
+    padding: 15px;
+}
+
+aside { /*aside area*/
+    grid-area: aside;
+}
+
+main { /*main area*/
+    grid-area: main;
+    padding: 30px;
+}
+
+nav { /*nav area*/
+    grid-area: nav;
+    float: center;
+}
+
+h2 {
+    color: rgb(149, 15, 15);
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+
+
+
+/* aside earea buttons */
+#info, #life, #death, #achievements, #portraits, #landscapes, #religious, #religious-scientific, #painting, #biography, #about_paintings, #login {
+    border: 2px solid #040404;
+    text-align: center;
+    padding: 7px;
+    margin: 8px;
+    margin-left: 20px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+/* nav earea buttons */
+#exhibitions, #links, #managment, #paintings, #bio {
+    border: 2px solid #0b0b0b;
+    text-align: center;
+    padding: 3px 30px;
+    font-size: 13px;
+    margin-top: 12px;
+    cursor: pointer;
+    margin-left: 38px;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+.hide { /*hide the previous text */
+    visibility: hidden;
+}
+
+.flex_box { /*use flex box for images*/
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.flex_box img{ /*appearance of images in flex box*/
+    align-items: center;
+    max-width: 70%;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+
+table{
+	margin: 3px auto;
+    text-align: center;
+}
+
+.float { /*class for float display*/
+    float: auto;
+    text-align: center;
+}
+
